@@ -7,3 +7,10 @@ Write a function called reverseArray which takes an array as an argument. Withou
 
 ### Solution
 ![DeltaV 401 class whiteboard](/assets/reverse_Array.JPG)
+
+## Shift an array
+In this challenge we were asked to:
+Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
+
+### Solution
+![Challenge 2 whiteboard](/assets/array_shift.JPG)
