@@ -2,7 +2,12 @@ function insertShiftArray(array,value){
   if(Array.isArray(array)&& value){
     const shiftedArray = [];
     let middle;
+    if(array.length%2){
+       middle = (array.length+1)/2
+    }
+    else{
        middle = array.length/2;
+    }
     for(let i=0;i<middle;i++){
       shiftedArray[i] = array[i];
     }
