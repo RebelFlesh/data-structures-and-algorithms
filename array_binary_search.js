@@ -13,6 +13,9 @@ function binarySearch(arr,key) {
     else if(key<arr[midIndex]){
       max = midIndex - 1;
     }
+    if(min>max){
+      return -1;
+    }
 
     return search(arr,key,min,max);
   }
