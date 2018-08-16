@@ -15,4 +15,10 @@ describe('binarySeach', ()=>{
     expect(binarySearch([1,2,3,4,5],2)).toBe(1);
     expect(binarySearch([1,2,3,4,5,6,7],1)).toBe(0);
   });
+   it('gives index of key inside of even arrays',()=>{
+    expect(binarySearch([1,2,3,4],1)).toBe(0);
+    expect(binarySearch([1,2,3,4],2)).toBe(1);
+    expect(binarySearch([1,2,3,4],3)).toBe(2);
+    expect(binarySearch([1,2,3,4],4)).toBe(3);
+   })
 });
