@@ -21,6 +21,9 @@ function binarySearch(arr,key) {
   if(!arr || !key || !isArray || arr.length===0){
     return null;
   }
+  if(key<arr[0] || key>arr[arr.length - 1]){
+    return -1;
+  }
 
   return search(arr,key,0,arr.length -1);
 }
