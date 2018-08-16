@@ -22,6 +22,7 @@ describe('binarySeach', ()=>{
     expect(binarySearch([1,2,3,4],4)).toBe(3);
    })
   it('give -1 index if key is not in the array',()=>{
+    expect(binarySearch([4,8,15,16,23,42], 5)).toBe(-1);
     expect(binarySearch([1,2,3],8)).toBe(-1);
     expect(binarySearch([1,2,3],100000)).toBe(-1);
     expect(binarySearch([1,2,3],-7)).toBe(-1);
