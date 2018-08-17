@@ -13,4 +13,11 @@ In this challenge we were asked to:
 Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 
 ### Solution
-![Challenge 2 whiteboard](/assets/array_shift.JPG)
+![Challenge 2 whiteboard](/assets/array_shift.jpg)
+
+## Binary Search
+In this challenge we were asked to:
+Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
+
+### Solution
+![Challenge 3 whitebaord](/assets/array_binary_search.jpg)
