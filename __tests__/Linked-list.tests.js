@@ -43,4 +43,15 @@ describe('list',()=>{
     });
   });
 
+  describe('includes',()=>{
+    it('can check if values are in the list',()=>{
+      let list = new List();
+      list.insert(1);
+      list.insert(4);
+      list.insert(99);
+
+      expect(list.includes(4)).toBe(true);
+      expect(list.includes(9001)).toBe(false);
+    });
+  })
 });
