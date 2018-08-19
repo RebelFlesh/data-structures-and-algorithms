@@ -15,6 +15,8 @@ class List {
       newNode.pointer = this.head;
       this.head = newNode;
   }
+    this.length++;
+  }
   }
 
   }
