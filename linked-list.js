@@ -14,12 +14,28 @@ class List {
       let newNode = new Node(value);
       newNode.pointer = this.head;
       this.head = newNode;
-  }
+    }
     this.length++;
   }
-  }
 
+  includes(valueQueried){
+    function checkNext(currentNode){
+      if(currentNode.v === valueQueried){
+        return true;
+      }
+      else if(currentNode.pointer === null){
+        return false;
+      }
+      else{
+        currentNode = currentNode.pointer;
+        return checkNext(currentNode);
+      }
+    }
+    
+    let currentNode = this.head;
+    return checkNext(currentNode);
   }
+}
 
 class Node {
   constructor(value){
