@@ -10,6 +10,11 @@ class List {
     if(this.head === null){
       this.head = new Node(value);
     }
+    else{
+      let newNode = new Node(value);
+      newNode.pointer = this.head;
+      this.head = newNode;
+  }
   }
 
   }
