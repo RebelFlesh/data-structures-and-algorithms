@@ -25,6 +25,22 @@ describe('list',()=>{
 
       
     });
+    it('can add nodes to a populated list',()=>{
+      let list = new List();
+      list.insert(1);
+      list.insert(4);
+
+      expect(list.length).toBe(2);
+      expect(list.head.v).toBe(4);
+      expect(list.head.pointer.v).toBe(1);
+
+      list.insert(99);
+
+      expect(list.length).toBe(3);
+      expect(list.head.v).toBe(99);
+      expect(list.head.pointer.v).toBe(4);
+      expect(list.head.pointer.pointer.v).toBe(1);
+    });
   });
 
 });
