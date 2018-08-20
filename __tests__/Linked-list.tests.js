@@ -54,4 +54,14 @@ describe('list',()=>{
       expect(list.includes(9001)).toBe(false);
     });
   })
+
+  describe('append',() => {
+    it('adds a node if the list is empty',() =>{
+      let list = new List();
+      list.append(1);
+
+      expect(list.includes(1)).toBe(true);
+      expect(list.length).toBe(1);
+    });
+  });
 });
