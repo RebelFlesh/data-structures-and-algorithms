@@ -37,11 +37,27 @@ class List {
   }
 
   append(value){
+    function checkNext(currentNode){
+      console.log(currentNode);
+      if(currentNode.pointer === null){
+        currentNode.pointer = new Node(value);
+      }  
+      else{
+        currentNode = currentNode.pointer;
+        checkNext(currentNode);
+      }
+    }
+
     if(!this.head){
       this.head = new Node(value);
       this.length++;
     }
-}
+    else{
+      let currentNode = this.head;
+      checkNext(currentNode);
+      this.length++;
+    }
+  }
 }
 
 class Node {
