@@ -35,6 +35,13 @@ class List {
     let currentNode = this.head;
     return checkNext(currentNode);
   }
+
+  append(value){
+    if(!this.head){
+      this.head = new Node(value);
+      this.length++;
+    }
+}
 }
 
 class Node {
