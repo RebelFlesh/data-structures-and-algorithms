@@ -63,5 +63,15 @@ describe('list',()=>{
       expect(list.includes(1)).toBe(true);
       expect(list.length).toBe(1);
     });
+
+    it('can add node to the end of the list',() =>{
+      let list = new List();
+      list.insert('red fish');
+      list.append('blue fish');
+
+      expect(list.includes('red fish')).toBe(true);
+      expect(list.includes('blue fish')).toBe(true);
+      expect(list.length).toBe(2);
+    });
   });
 });
