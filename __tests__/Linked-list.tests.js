@@ -76,6 +76,12 @@ describe('list',()=>{
   });
 
   describe('insertBefore',() =>{
+    it('blows up if called on an empty list',() => {
+      let list = new List();
+
+      //TODO:Make this throw error
+      expect(list.insertBefore(4,3)).toBe(null);
+    });
     it('inserts a node before a given node',() =>{
       let list = new List();
       list.append(1);
