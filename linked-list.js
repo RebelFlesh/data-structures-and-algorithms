@@ -57,6 +57,22 @@ class List {
       this.length++;
     }
   }
+
+  insertBefore(queriedValue,newValue){
+    function search(currentNode){
+      if(currentNode.pointer.v === queriedValue){
+        let storedNode = currentNode.pointer;
+        currentNode.pointer = new Node(newValue);
+        currentNode.pointer.pointer = storedNode;
+      }
+      else{
+        currentNode = currentNode.pointer;
+        search(currentNode);
+      }
+    }
+    let currentNode = this.head;
+    search(currentNode);
+  }
 }
 
 class Node {
