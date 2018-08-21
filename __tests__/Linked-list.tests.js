@@ -74,4 +74,20 @@ describe('list',()=>{
       expect(list.length).toBe(2);
     });
   });
+
+  describe('insertBefore',() =>{
+    it('inserts a node before a given node',() =>{
+      let list = new List();
+      list.append(1);
+      list.append(2);
+      list.append(4);
+
+      list.insertBefore(4,3);
+
+      expect(list.includes(3)).toBe(true);
+      expect(list.head.pointer.v).toBe(2);
+      expect(list.head.pointer.pointer.v).toBe(3);
+      expect(list.head.pointer.pointer.pointer.v).toBe(4);
+    });
+  });
 });
