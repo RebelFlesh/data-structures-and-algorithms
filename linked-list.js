@@ -38,7 +38,6 @@ class List {
 
   append(value){
     function checkNext(currentNode){
-      console.log(currentNode);
       if(currentNode.pointer === null){
         currentNode.pointer = new Node(value);
       }  
