@@ -70,6 +70,9 @@ class List {
         search(currentNode);
       }
     }
+    if(!this.head){
+      return null;
+    }
     let currentNode = this.head;
     search(currentNode);
   }
