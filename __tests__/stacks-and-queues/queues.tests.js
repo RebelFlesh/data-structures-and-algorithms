@@ -13,7 +13,7 @@ describe('queue', () => {
     });
   });
   describe('enqueue', () => {
-    it('adds a new node to the end of a queue', () => {
+    it('adds a new node to an empty queue', () => {
       let queue = new Queue();
 
       queue.enqueue(1);
@@ -21,6 +21,34 @@ describe('queue', () => {
       expect(queue.tail).not.toBe(null);
       expect(queue.head.value).toBe(1);
       expect(queue.length).toBe(1);
+    });
+    
+    it('can add new nodes to an end of a queue', () => {
+      let queue = new Queue();
+      queue.enqueue(1);
+      queue.enqueue(2);
+
+      //testing from the front of queue
+      expect(queue.head.value).toBe(1);
+      expect(queue.head.next.value).toBe(2);
+      //testing from the back of queue
+      expect(queue.tail.value).toBe(2);
+      expect(queue.tail.previous.value).toBe(1);
+      //testing length of queue
+      expect(queue.length).toBe(2);
+
+      queue.enqueue(3);
+
+      //testing front
+      expect(queue.head.value).toBe(1);
+      expect(queue.head.next.value).toBe(2);
+      expect(queue.head.next.next.value).toBe(3);
+      //testing back
+      expect(queue.tail.value).toBe(3);
+      expect(queue.tail.previous.value).toBe(2);
+      expect(queue.tail.previous.previous.value).toBe(1);
+      //testing length
+      expect(queue.length).toBe(3);
     });
   });
 });
