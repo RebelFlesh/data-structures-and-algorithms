@@ -7,6 +7,24 @@ class Queue {
     this.length = 0;
   }
 
+  enqueue(value){
+    if(!value){
+      throw new Error('enqueue needs a value');
+    }
+    
+    let node = new Node(value);
+
+    if(!this.head){
+      this.head = node;
+      this.tail = node;
+    }
+    else{
+      this.tail.next = node;
+      node.previous = this.tail;
+      this.tail = node;
+    }
+    this.length++;
+  }
 }
 
 class Node{
