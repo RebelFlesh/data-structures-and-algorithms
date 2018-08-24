@@ -24,5 +24,21 @@ describe('Stack',() => {
       expect(stack.head.value).toBe("a");
       expect(stack.length).toBe(1);
     });
+    it('inserts a new node to the front of a list', () => {
+      let stack = new Stack();
+      stack.push("a");
+      stack.push("b");
+
+      expect(stack.head.value).toBe("b");
+      expect(stack.head.next.value).toBe("a");
+      expect(stack.length).toBe(2);
+
+      stack.push("c");
+
+      expect(stack.head.value).toBe("c");
+      expect(stack.head.next.value).toBe("b");
+      expect(stack.head.next.next.value).toBe("a");
+      expect(stack.length).toBe(3);
+    });
   });
 });

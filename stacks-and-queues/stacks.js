@@ -16,6 +16,11 @@ class Stack{
     if(!this.head){
       this.head = node;
     }
+    else{
+      let storedNodes = this.head;
+      this.head = node;
+      this.head.next = storedNodes;
+    }
     this.length++;
   }
 }
