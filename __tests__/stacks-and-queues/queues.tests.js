@@ -13,6 +13,11 @@ describe('queue', () => {
     });
   });
   describe('enqueue', () => {
+    it("throws an error if not given argument",()=> {
+      let queue = new Queue();
+      expect(()=> queue.enqueue()).toThrowError('Enqueue needs a value');
+    });
+    
     it('adds a new node to an empty queue', () => {
       let queue = new Queue();
 

@@ -9,7 +9,7 @@ class Queue {
 
   enqueue(value){
     if(!value){
-      throw new Error('enqueue needs a value');
+      throw new Error('Enqueue needs a value');
     }
 
     let node = new Node(value);
