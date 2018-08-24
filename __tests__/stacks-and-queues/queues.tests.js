@@ -22,7 +22,7 @@ describe('queue', () => {
       expect(queue.head.value).toBe(1);
       expect(queue.length).toBe(1);
     });
-    
+
     it('can add new nodes to an end of a queue', () => {
       let queue = new Queue();
       queue.enqueue(1);
@@ -49,6 +49,30 @@ describe('queue', () => {
       expect(queue.tail.previous.previous.value).toBe(1);
       //testing length
       expect(queue.length).toBe(3);
+    });
+  });
+  describe('dequeue', () => {
+    it('throws an error', () => {
+      let queue = new Queue();
+      expect(()=>queue.dequeue()).toThrowError('Queue is empty');
+    });
+    it('removes front item from the queue', () => {
+      let queue = new Queue();
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+
+      //Before dequeue
+      expect(queue.head.value).toBe(1);
+      expect(queue.tail.value).toBe(3);
+      expect(queue.length).toBe(3);
+
+      queue.dequeue();
+
+      //After dequeue
+      expect(queue.head.value).toBe(2);
+      expect(queue.tail.value).toBe(3);
+      expect(queue.length).toBe(2);
     });
   });
 });
