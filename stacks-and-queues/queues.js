@@ -11,7 +11,7 @@ class Queue {
     if(!value){
       throw new Error('enqueue needs a value');
     }
-    
+
     let node = new Node(value);
 
     if(!this.head){
@@ -24,6 +24,15 @@ class Queue {
       this.tail = node;
     }
     this.length++;
+  }
+
+  dequeue(){
+    if(!this.head){
+      throw new Error('Queue is empty');
+    }
+    this.head = this.head.next;
+    this.head.previous = null;
+    this.length--;
   }
 }
 
