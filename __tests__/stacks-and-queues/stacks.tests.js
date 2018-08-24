@@ -16,5 +16,13 @@ describe('Stack',() => {
       let stack = new Stack();
       expect(()=> stack.push()).toThrowError('Push needs a value');
     });
+    it('adds a new node to an empty', () => {
+      let stack = new Stack();
+
+      stack.push("a");
+      expect(stack.head).not.toBe(null);
+      expect(stack.head.value).toBe("a");
+      expect(stack.length).toBe(1);
+    });
   });
 });

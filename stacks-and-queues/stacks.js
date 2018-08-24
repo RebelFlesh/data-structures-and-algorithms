@@ -10,6 +10,13 @@ class Stack{
     if(!value){
       throw new Error('Push needs a value');
     }
+
+    let node = new Node(value);
+
+    if(!this.head){
+      this.head = node;
+    }
+    this.length++;
   }
 }
 
