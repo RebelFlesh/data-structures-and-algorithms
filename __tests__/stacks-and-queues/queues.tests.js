@@ -12,4 +12,15 @@ describe('queue', () => {
       expect(queue.tail).toBe(null);
     });
   });
+  describe('enqueue', () => {
+    it('adds a new node to the end of a queue', () => {
+      let queue = new Queue();
+
+      queue.enqueue(1);
+      expect(queue.head).not.toBe(null);
+      expect(queue.tail).not.toBe(null);
+      expect(queue.head.value).toBe(1);
+      expect(queue.length).toBe(1);
+    });
+  });
 });
