@@ -9,7 +9,7 @@ export default class FakeQueue{
 
   enqueue(value){
     if(!value){
-      throw new Error('enqueue needs a value');
+      throw new Error('Calling enqueue without a value');
     }
     this.data.push(value);
   }
