@@ -2,7 +2,7 @@
 
 import Stack from './stacks';
 
-export default class FakeQueue{
+export default class Queue{
   constructor(){
     this.data = new Stack();
   }
