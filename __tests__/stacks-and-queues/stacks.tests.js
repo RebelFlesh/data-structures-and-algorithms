@@ -46,5 +46,28 @@ describe('Stack',() => {
       let stack = new Stack();
       expect(() => stack.pop()).toThrowError('Stack is empty');
     });
+    it('returns the last item added to the list', () => {
+      let stack = new Stack();
+      stack.push(1);
+      stack.push(2);
+      stack.push(3);
+
+      let poppedValue = stack.pop();
+      expect(poppedValue).toBe(3);
+    });
+    it('removes the last item added to the stack', () => {
+      let stack = new Stack();
+      stack.push('Left');
+      stack.push('Right');
+
+      //Before the pop
+      expect(stack.head.value).toBe('Right');
+      expect(stack.length).toBe(2);
+
+      stack.pop();
+
+      expect(stack.head.value).toBe('Left');
+      expect(stack.length).toBe(1);
+    });
   });
 });

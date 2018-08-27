@@ -28,6 +28,10 @@ class Stack{
     if(!this.head){
       throw new Error('Stack is empty');
     }
+    let poppedValue = this.head.value;
+    this.head = this.head.next;
+    this.length--;
+    return poppedValue;
   }
 }
 
