@@ -28,4 +28,28 @@ describe('Queue', () => {
       expect(queue.data.length).toBe(2);
     });
   });
+  describe('dequeue', () => {
+    it('throws an error if called on an empty queue', () => {
+      let queue = new FakeQueue();
+      expect(() => queue.dequeue()).toThrowError('Calling dequeue on empty queue');
+    });
+    it('returns the value at the front of the queue', () => {
+      let queue = new FakeQueue();
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+
+      let returnedValue = queue.dequeue();
+      expect(returnedValue).toBe(1);
+    });
+    it('leaves the original queue shifted over by one with the returned value missing', () => {
+      let queue = new FakeQueue();
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+
+      queue.dequeue();
+      expect(queue.data.head.value).toBe(3);
+    });
+  });
 });
