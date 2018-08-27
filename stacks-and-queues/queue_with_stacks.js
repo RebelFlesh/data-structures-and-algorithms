@@ -1,16 +1,13 @@
 'use strict';
 
+import Stack from './stacks';
 
-export default class fakeQueue{
+export default class FakeQueue{
   constructor(){
-    this.head = null;
-    this.length = 0;
+    this.data = new Stack();
   }
-}
 
-class Node{
-  constructor(value){
-    this.value = value;
-    this.next = null;
+  enqueue(value){
+    this.data.push(value);
   }
 }
