@@ -23,6 +23,12 @@ class Stack{
     }
     this.length++;
   }
+
+  pop(){
+    if(!this.head){
+      throw new Error('Stack is empty');
+    }
+  }
 }
 
 class Node{

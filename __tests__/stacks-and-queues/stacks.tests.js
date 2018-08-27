@@ -41,4 +41,10 @@ describe('Stack',() => {
       expect(stack.length).toBe(3);
     });
   });
+  describe('pop',() => {
+    it('throws an error on empty stack', () => {
+      let stack = new Stack();
+      expect(() => stack.pop()).toThrowError('Stack is empty');
+    });
+  });
 });
