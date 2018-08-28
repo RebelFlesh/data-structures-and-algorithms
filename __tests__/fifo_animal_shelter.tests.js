@@ -31,7 +31,7 @@ describe('AnimalShelter', () => {
       }
       let dog2 = {
         species:'dog',
-        name:'lassy',
+        name:'Lassy',
       }
       shelterQueue.enqueue(dog1);
       shelterQueue.enqueue(dog2);
@@ -52,6 +52,58 @@ describe('AnimalShelter', () => {
 
       expect(shelterQueue.tail.animal.species).toBe('cat');
       expect(shelterQueue.numOfCats).toBe(1);
+    });
+  });
+  describe('dequeue', () => {
+    it('returns the animal first added to the shelter if no preference was given', () => {
+      let shelterQueue = new AnimalShelter();
+      let dog = {
+        species:'dog',
+        name:'Fido',
+      }
+      let cat ={
+        species:'cat',
+        name:'Frasier'
+      }
+      shelterQueue.enqueue(dog);
+      shelterQueue.enqueue(cat);
+      expect(shelterQueue.head.animal.species).toBe('dog');
+      expect(shelterQueue.numOfDogs).toBe(1);
+      expect(shelterQueue.length).toBe(2);
+
+      let newPet = shelterQueue.dequeue();
+      expect(newPet.name).toBe('Fido');
+      expect(shelterQueue.head.animal.species).toBe('cat');
+      expect(shelterQueue.numOfDogs).toBe(0);
+      expect(shelterQueue.length).toBe(1);
+    });
+    it('returns the first animal recieve of a given preference', () => {
+      let shelterQueue = new AnimalShelter();
+      let dog = {
+        species:'dog',
+        name:'Fido',
+      }
+      let cat ={
+        species:'cat',
+        name:'Frasier'
+      } 
+      let dog2 ={
+        species:'dog',
+        name:'Bingo',
+      }
+      shelterQueue.enqueue(dog);
+      shelterQueue.enqueue(cat);
+      shelterQueue.enqueue(dog2);
+      expect(shelterQueue.head.animal.name).toBe('Fido');
+      expect(shelterQueue.head.next.animal.name).toBe('Frasier');
+      expect(shelterQueue.head.next.next.animal.name).toBe('Bingo');
+
+      let newPet = shelterQueue.dequeue('cat');
+      expect(newPet.species).toBe('cat');
+      expect(newPet.name).toBe('Frasier');
+      expect(shelterQueue.head.animal.name).toBe('Fido');
+      expect(shelterQueue.head.next.animal.name).toBe('Bingo');
+      expect(shelterQueue.numOfCats).toBe(0);
     });
   });
 });

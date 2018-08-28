@@ -37,6 +37,38 @@ export default class AnimalShelter{
       this.numOfCats++;
     }
   }
+  dequeue(preference){
+    if(!preference){
+      const returnedAnimal = this.head.animal;
+      this.head = this.head.next;
+      this.head.next = null;
+      if(returnedAnimal.species ==='dog'){
+        this.numOfDogs--;
+      }
+      if(returnedAnimal.species ==='cat'){
+        this.numOfCats--;
+      }
+      this.length--;
+      return returnedAnimal;
+    }
+    let currentAnimal = this.head;
+    
+    while(currentAnimal.animal.species !== preference){
+      console.log(currentAnimal.animal.name);
+      currentAnimal = this.head.next;
+    }
+    let returnedAnimal = currentAnimal.animal;
+    console.log(returnedAnimal);
+    currentAnimal.previous.next = currentAnimal.next;
+    if(returnedAnimal.species ==='dog'){
+      this.numOfDogs--;
+    }
+    if(returnedAnimal.species ==='cat'){
+      this.numOfCats--;
+    }
+    this.length--;
+    return returnedAnimal;
+  }
 }
 
 class Animal{
