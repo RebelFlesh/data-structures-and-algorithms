@@ -54,11 +54,9 @@ export default class AnimalShelter{
     let currentAnimal = this.head;
     
     while(currentAnimal.animal.species !== preference){
-      console.log(currentAnimal.animal.name);
       currentAnimal = this.head.next;
     }
     let returnedAnimal = currentAnimal.animal;
-    console.log(returnedAnimal);
     currentAnimal.previous.next = currentAnimal.next;
     if(returnedAnimal.species ==='dog'){
       this.numOfDogs--;

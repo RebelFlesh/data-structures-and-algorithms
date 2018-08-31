@@ -7,7 +7,6 @@ export default class BinaryTree{
 
   insert(value){
     let traverse = function(current){
-      console.log("compairing"+ current.value + "to"+ node.value);
       if(current.value > node.value){
         if(current.left === null){
           node.parent = current;
