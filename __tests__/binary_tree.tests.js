@@ -35,6 +35,18 @@ describe('tree', () => {
       expect(tree.root.right.right.value).toBe(100);
       expect(tree.root.right.right.parent.parent.value).toBe(4);
     });
+    it('can insert nodes alternating left and right', () => {
+      let tree = new Tree();
+
+      tree.insert(4);
+      tree.insert(2);
+      tree.insert(3);
+      tree.insert(6);
+      tree.insert(5);
+
+      expect(tree.root.left.right.value).toBe(3);
+      expect(tree.root.right.left.value).toBe(5);
+    });
     it('throws an error if given the same number to insert twice', () => {
       let tree = new Tree();
       tree.insert(4);
@@ -42,4 +54,20 @@ describe('tree', () => {
       expect(() => tree.insert(2)).toThrowError("This node exists in the tree already");
     });
   });
-});
+  describe('delete', () => {
+    it("removes a given node from a tree", () => {
+      let tree = new Tree();
+      tree.insert(4);
+      tree.insert(3);
+      tree.insert(5);
+
+      expect(tree.root.right.value).toBe(5);
+
+      tree.remove(5);
+      expect(tree.root.right).toBe(null);
+
+      tree.remove(3);
+      expect(tree.root.left).toBe(null);
+    });
+  });
+}); 

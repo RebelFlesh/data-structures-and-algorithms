@@ -42,6 +42,32 @@ export default class BinaryTree{
     let current = this.root;
     traverse(current);
   }
+
+  remove(queriedValue){
+    let traverse = function(current){
+      if(current.value > queriedValue){
+        current = current.left;
+        traverse(current);
+      }
+      else if(current.value < queriedValue){
+        current = current.right;
+        traverse(current);
+      }
+      else if(current.value === queriedValue){
+        if(current === current.parent.right){
+          current.parent.right = null;
+        }
+        else{
+          current.parent.left = null;
+        }
+      }
+      else{
+        throw new Error("Queried Value isnt in the tree");
+      }
+    }
+    let current = this.root;
+    traverse(current)
+  }
 }
 
 class Node{
