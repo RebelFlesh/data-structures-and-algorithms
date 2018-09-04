@@ -2,8 +2,13 @@
 
 function fizzBuzzTree(tree){
   let check = function(node){
-    if(node.value % 3 === 0){
-      node.value ="Fizz";
+    if(node.value !== 0){
+      if(node.value % 3 === 0){
+        node.value ="Fizz";
+      }
+      else if(node.value % 5 === 0){
+        node.value ="Buzz";
+      }
     }
     if(node.right){
       check(node.right);
