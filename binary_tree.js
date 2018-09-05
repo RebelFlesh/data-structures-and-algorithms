@@ -68,6 +68,17 @@ export default class BinaryTree{
     let current = this.root;
     traverse(current)
   }
+
+  find_maximum_value(){
+    if(!this.root){
+      return null;
+    }
+    let current = this.root;
+    while(current.right !== null){
+      current = current.right;
+    }
+    return current.value;
+  }
 }
 
 class Node{

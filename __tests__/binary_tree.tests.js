@@ -70,4 +70,26 @@ describe('tree', () => {
       expect(tree.root.left).toBe(null);
     });
   });
+  describe('find_maximum_value', () => {
+    it('returns null if called on an empty tree', () => {
+      let tree = new Tree();
+
+      let max = tree.find_maximum_value();
+
+      expect(max).toBe(null);
+    });
+    it('returns the max value', () => {
+      let tree = new Tree();
+      tree.insert(5);
+      tree.insert(3);
+      tree.insert(9);
+      tree.insert(100);
+      tree.insert(1000);
+      tree.insert(-10000)
+
+      let max = tree.find_maximum_value();
+
+      expect(max).toBe(1000);
+    });
+  });
 }); 
