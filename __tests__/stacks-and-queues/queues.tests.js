@@ -79,5 +79,15 @@ describe('queue', () => {
       expect(queue.tail.value).toBe(3);
       expect(queue.length).toBe(2);
     });
+    it('returns the dequeued value', () => {
+      let queue = new Queue();
+      queue.enqueue(1);
+      queue.enqueue(2);
+      queue.enqueue(3);
+
+      let returnedValue = queue.dequeue();
+
+      expect(returnedValue).toBe(1);
+    });
   });
 });
