@@ -30,9 +30,11 @@ class Queue {
     if(!this.head){
       throw new Error('Queue is empty');
     }
+    let returnedValue = this.head.value;
     this.head = this.head.next;
     this.head.previous = null;
     this.length--;
+    return returnedValue;
   }
 }
 
